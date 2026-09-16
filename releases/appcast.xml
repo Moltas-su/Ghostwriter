@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>GhostWriter</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Wed, 16 Sep 2026 03:11:54 +0200</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://raw.githubusercontent.com/Moltas-su/Ghostwriter/main/GhostWriter.zip" length="10980362" type="application/octet-stream" sparkle:edSignature="pX/FFainhGVdO2DUkMxYAJswt8WFHkb2rkoMLGYr655ErjKCLM6TejIhPbTA83J10KxqMVCQzuC1R+PHitOdDw=="/>
+        </item>
+    </channel>
+</rss>
