@@ -63,6 +63,9 @@ fi
 echo "==> Registering macOS Services..."
 /System/Library/CoreServices/pbs -update
 
+echo "==> Signing the app bundle..."
+codesign --force --deep --sign - "$APP_BUNDLE"
+
 echo "==> Installing to ~/Applications..."
 mkdir -p ~/Applications
 cp -R "$APP_BUNDLE" ~/Applications/
