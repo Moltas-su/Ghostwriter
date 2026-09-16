@@ -1,0 +1,18 @@
+# Build directories and binaries
+build/
+*.app
+bin/llama-cli
+
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode / Swift
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+
+# Personal / Project Documentation
+*.md
+!README.md
