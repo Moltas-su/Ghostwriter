@@ -1,10 +1,13 @@
 import AppKit
+import Sparkle
 
 public class MenuBarController: NSObject {
     private var statusItem: NSStatusItem!
     private var menu: NSMenu!
+    private var updaterController: SPUStandardUpdaterController
     
-    public override init() {
+    public init(updaterController: SPUStandardUpdaterController) {
+        self.updaterController = updaterController
         super.init()
         setupMenu()
     }
@@ -18,11 +21,18 @@ public class MenuBarController: NSObject {
         menu = NSMenu(title: "GhostWriter")
         
         menu.addItem(withTitle: "Settings...", action: #selector(openSettings), keyEquivalent: ",")
+        
+        let checkForUpdatesItem = NSMenuItem(title: "Check for Updates...", action: #selector(SPUStandardUpdaterController.checkForUpdates(_:)), keyEquivalent: "")
+        checkForUpdatesItem.target = updaterController
+        menu.addItem(checkForUpdatesItem)
+        
         menu.addItem(NSMenuItem.separator())
         menu.addItem(withTitle: "Quit GhostWriter", action: #selector(quitApp), keyEquivalent: "q")
         
         for item in menu.items {
-            item.target = self
+            if item.target == nil {
+                item.target = self
+            }
         }
         
         statusItem.menu = menu

@@ -1,12 +1,17 @@
 import AppKit
+import Sparkle
 
 public class AppDelegate: NSObject, NSApplicationDelegate {
     private var menuBarController: MenuBarController!
     private var serviceProvider: ServiceProvider!
+    private var updaterController: SPUStandardUpdaterController!
     
     public func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Initialize Sparkle
+        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+        
         // Initialize Menu Bar
-        menuBarController = MenuBarController()
+        menuBarController = MenuBarController(updaterController: updaterController)
         
         // Register macOS Services
         serviceProvider = ServiceProvider()

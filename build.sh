@@ -16,10 +16,17 @@ echo "==> Compiling Swift sources..."
 swiftc Sources/*.swift Sources/**/*.swift \
     -o "$MACOS/$APP_NAME" \
     -target arm64-apple-macos14.0 \
+    -F Vendor \
+    -framework Sparkle \
+    -Xlinker -rpath -Xlinker "@executable_path/../Frameworks" \
     -O
 
 echo "==> Copying Info.plist and resources..."
 cp Resources/Info.plist "$CONTENTS/Info.plist"
+
+echo "==> Copying Sparkle framework..."
+mkdir -p "$CONTENTS/Frameworks"
+cp -R Vendor/Sparkle.framework "$CONTENTS/Frameworks/"
 
 if [ -d Resources/Shortcuts ]; then
     cp -R Resources/Shortcuts "$RESOURCES/Shortcuts"
