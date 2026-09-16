@@ -11,6 +11,17 @@ GhostWriter runs in the background from your menu bar. When you select text and 
 
 You can pick which backend you prefer from the settings window. Local models can be downloaded directly inside the app.
 
+### How to use it
+
+Launch GhostWriter and walk through the setup guide.
+
+Once you are done with setup, highlight any editable text in any app. Right click and open the Services menu. You will find two items:
+
+1. GhostWriter Proofread
+2. GhostWriter Rewrite
+
+Select the one you want for the task you want GhostWriter to perform, and it will update your text in place.
+
 ### Project status
 
 GhostWriter is currently in beta. It is actively being improved and refined.
