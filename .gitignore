@@ -16,3 +16,7 @@ xcuserdata/
 # Personal / Project Documentation
 *.md
 !README.md
+
+# Sparkle Updates
+publish_update.sh
+releases/*.zip
